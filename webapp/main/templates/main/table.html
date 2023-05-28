@@ -1,0 +1,35 @@
+{% extends 'main/layout.html'%}
+{% block content %}
+
+<div class="" style="color: white">
+    <h2 class="text-center border-bottom">История перемещений</h2>
+    <br>
+    {% for i in movement %}
+
+    <div class="profile_block text-center">
+        <h5>Идентификатор: {{ i.id }}</h5>
+        <h5>Дата: {{ i.date }}</h5>
+        <h5>Сотрудник: {{ i.user_name }}</h5>
+        <h5>Комнаты: </h5>
+        {% for r in i.rooms.all %}
+
+        <h5 style="display: inline-block">{{ r.room_name}}{% if not forloop.last %}, {% endif %}</h5>
+
+
+        {% endfor %}
+        <h5>Компания: {{ i.company }}</h5>
+        <a href="{% url 'update_mov' i.id %}" class="btn btn-outline-success">Редактировать</a>
+        <a href="{% url 'delete_mov' i.id %}" class="btn btn-outline-danger">Удалить</a>
+        <br>
+        <br>
+    </div>
+    <br>
+    {% endfor %}
+    <div class="profile_block text-center">
+        <a href="{% url 'create_mov' %}" class="btn btn-outline-info" style="width: 100%">Создать</a>
+
+
+    </div>
+</div>
+
+{% endblock %}

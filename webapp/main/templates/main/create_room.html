@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Создание/обновление комнаты
+{% endblock %}
+
+{% block content %}
+<div class="add_receipt_block">
+    <h2 class="text-center border-bottom">Создание/обновление комнаты</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Название комнаты:</label>
+            {{ form.room_name }}
+        </div>
+
+        <div class="text-center border-top">
+            <button type="submit" class="btn btn-outline-success mt-3">Выполнить</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

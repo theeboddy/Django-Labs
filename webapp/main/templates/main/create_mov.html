@@ -1,0 +1,35 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Создание/обновление перемещения
+{% endblock %}
+
+{% block content %}
+<div class="add_receipt_block">
+    <h2 class="text-center border-bottom">Создание/обновление перемещения</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Date:</label>
+            {{ form.date }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Worker:</label>
+            {{ form.user_name }}
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Rooms:</label>
+            {{ form.rooms }}
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Company:</label>
+            {{ form.company }}
+        </div>
+
+        <div class="text-center border-top">
+            <button type="submit" class="btn btn-outline-success mt-3">Выполнить</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

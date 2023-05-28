@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Создание/обновление отдела
+{% endblock %}
+
+{% block content %}
+<div class="add_receipt_block">
+    <h2 class="text-center border-bottom">Создание/обновление отдела</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Название отдела:</label>
+            {{ form.name }}
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Директор отдела:</label>
+            {{ form.leader }}
+        </div>
+
+        <div class="text-center border-top">
+            <button type="submit" class="btn btn-outline-success mt-3">Выполнить</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

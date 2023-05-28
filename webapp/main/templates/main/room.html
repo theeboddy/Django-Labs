@@ -1,0 +1,24 @@
+{% extends 'main/layout.html'%}
+{% block content %}
+
+<div class="" style="color: white">
+    <h2 class="text-center border-bottom">Комнаты</h2>
+    <br>
+    {% for i in room %}
+
+    <div class="profile_block text-center">
+        <h5>Идентификатор: {{ i.id }}</h5>
+        <h5>Название комнаты: {{ i.room_name }}</h5>
+        <a href="{% url 'update_room' i.id %}" class="btn btn-outline-success">Редактировать</a>
+        <a href="{% url 'delete_room' i.id %}" class="btn btn-outline-danger">Удалить</a>
+
+
+    </div>
+    <br>
+    {% endfor %}
+    <div class="profile_block text-center">
+        <a href="{% url 'create_room' %}" class="btn btn-outline-info" style="width: 100%">Создать</a>
+    </div>
+</div>
+
+{% endblock %}

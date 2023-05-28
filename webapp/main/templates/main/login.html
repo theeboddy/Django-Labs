@@ -1,0 +1,33 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Авторизация
+{% endblock %}
+
+{% block content %}
+<div class="add_receipt_block">
+    <h2 class="text-center border-bottom">Авторизация</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Username:</label>
+            {{ form.username }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password:</label>
+            {{ form.password }}
+        </div>
+
+        <div class="mb-3">
+             <p>
+            Do you already have an account? - <a href="{% url 'register' %}" class="hint text-primary" style="text-decoration:none">Login</a>
+            </p>
+        </div>
+
+        <div class="text-center border-top">
+            <button type="submit" class="btn btn-outline-success mt-3">Sign Up</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

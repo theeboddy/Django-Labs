@@ -1,0 +1,34 @@
+{% extends 'main/layout.html'%}
+{% block content %}
+<div class="info" align="center">
+
+</div>
+<div class="profile text-center">
+        <br>
+        <br>
+    <div class="profile_block text-center">
+
+    <h2 class="text-center border-bottom">Профиль</h2>
+
+    <h5>Имя - {{user.first_name}}</h5>
+    <br>
+    <h5>Фамилия - {{user.last_name}}</h5>
+    <br>
+    <h5>Логин - {{user}}</h5>
+    <br>
+    <h5>Почта - {{user.email}}</h5>
+    <br>
+    <h5>Роль - {{user.role}}</h5>
+    <br>
+        <a class="btn btn-outline-info" href="{%url 'logout' %}">Выйти с аккаунта</a>
+        <br>
+        <br>
+    </div>
+
+
+
+    </div>
+    <br>
+
+</div>
+{% endblock %}

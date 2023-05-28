@@ -1,0 +1,24 @@
+{% extends 'main/layout.html'%}
+{% block content %}
+
+<div class="" style="color: white">
+    <h2 class="text-center border-bottom">Отделы</h2>
+    <br>
+    {% for i in section %}
+
+    <div class="profile_block text-center">
+        <h5>Идентификатор: {{ i.id }}</h5>
+        <h5>Название отдела: {{ i.name }}</h5>
+        <h5>Директор отдела: {{ i.leader }}</h5>
+        <a href="{% url 'update_section' i.id %}" class="btn btn-outline-success">Редактировать</a>
+        <a href="{% url 'delete_section' i.id %}" class="btn btn-outline-danger">Удалить</a>
+
+    </div>
+    <br>
+    {% endfor %}
+    <div class="profile_block text-center">
+        <a href="{% url 'create_section' %}" class="btn btn-outline-info" style="width: 100%">Создать</a>
+    </div>
+</div>
+
+{% endblock %}
